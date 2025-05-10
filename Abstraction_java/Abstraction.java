@@ -54,7 +54,7 @@ class ElectricBike extends Vehicle implements Drive, Engine {
     }
 
     @Override
-    void fuelType() {
+    public void fuelType() {
         System.out.println("Electric bike uses battery power.");
     }
 
