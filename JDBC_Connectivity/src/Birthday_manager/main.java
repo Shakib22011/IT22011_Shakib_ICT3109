@@ -1,0 +1,23 @@
+
+package Birthday_manager;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+
+public class main extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("BirthdayView.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("জন্মদিন ব্যবস্থাপনা");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

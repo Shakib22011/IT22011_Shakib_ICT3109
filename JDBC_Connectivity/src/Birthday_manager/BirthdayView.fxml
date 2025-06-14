@@ -1,0 +1,46 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="birthdaymanager.BirthdayController">
+
+    <top>
+        <Label text="🎂 আজকের জন্মদিন: " fx:id="labelToday" style="-fx-font-size: 16px; -fx-padding: 10;"/>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <TableView fx:id="table" prefHeight="250">
+                <columns>
+                    <TableColumn fx:id="colId" text="আইডি" prefWidth="50"/>
+                    <TableColumn fx:id="colName" text="নাম" prefWidth="150"/>
+                    <TableColumn fx:id="colDob" text="জন্মদিন" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Label text="নাম:"/>
+                <TextField fx:id="nameField" promptText="নাম লিখুন"/>
+                <Label text="জন্মদিন:"/>
+                <DatePicker fx:id="dobPicker"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="যোগ করুন" onAction="#handleAdd"/>
+                <Button text="আপডেট করুন" onAction="#handleUpdate"/>
+                <Button text="মুছুন" onAction="#handleDelete"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <TextField fx:id="searchField" promptText="নাম বা মাস লিখুন"/>
+                <Button text="অনুসন্ধান" onAction="#handleSearch"/>
+                <Button text="সব দেখান" onAction="#handleShowAll"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
