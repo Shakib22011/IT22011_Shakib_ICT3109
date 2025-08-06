@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enter Student ID</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h2>Enter your Student ID</h2>
+
+<form th:action="@{/checkStudent}" method="post">
+    <input type="text" name="studentId" placeholder="Student ID" required/>
+    <button type="submit">Submit</button>
+</form>
+
+<p style="color:red;" th:if="${error}" th:text="${error}"></p>
+</body>
+</html>

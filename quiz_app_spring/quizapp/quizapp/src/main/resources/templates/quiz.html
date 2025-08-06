@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Math Questions</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h2>Math Questions (2 items)</h2>
+
+<form th:action="@{/submitQuiz}" method="post">
+    <input type="hidden" name="studentId" th:value="${studentId}"/>
+
+    <div th:each="question : ${questions}">
+        <p><b th:text="${question.questionText}"></b></p>
+        <label><input type="radio" th:name="'question_' + ${question.id}" value="A" required/> <span th:text="${question.optionA}"></span></label><br/>
+        <label><input type="radio" th:name="'question_' + ${question.id}" value="B"/> <span th:text="${question.optionB}"></span></label><br/>
+        <label><input type="radio" th:name="'question_' + ${question.id}" value="C"/> <span th:text="${question.optionC}"></span></label><br/>
+        <label><input type="radio" th:name="'question_' + ${question.id}" value="D"/> <span th:text="${question.optionD}"></span></label><br/><br/>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
